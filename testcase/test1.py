@@ -47,11 +47,6 @@ class ceshi(unittest.TestCase):
        # print response.status_code#返回响应码
         self.assertEqual(response['message'], 'ok')
         
-      #别人编辑的内容
-      #xintianjia
-
-      #keyi
-    #别人的操作
 
 if __name__ == "__main__":
 
