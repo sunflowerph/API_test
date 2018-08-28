@@ -36,7 +36,7 @@ class ceshi(unittest.TestCase):
         #print response
         self.assertEqual(response['message'], 'ok')
 
-    def test_change_nickname(self):  # 更改用户昵称
+    def test_change_nickname_name(self):  # 更改用户昵称
         url = "https://qiubo-dev.dongpinbang.com:61501/v1/account/change-nickname"
         search = {'token': '304uTFI8xohdghTwHqtdhcfmAtkuKYfBFLjKZOgvoQbASg0p3w48XBjCs1VcgaqJjKbOeokLjk'
                            'VFf4ahSNnhRk7ldqYwn7DgkOE0c15iscmMI1nAEysP375qHI6JRBAv',
@@ -46,6 +46,8 @@ class ceshi(unittest.TestCase):
         #print response
        # print response.status_code#返回响应码
         self.assertEqual(response['message'], 'ok')
+        
+      #别人编辑的内容
 
 
 if __name__ == "__main__":
