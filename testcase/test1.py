@@ -3,19 +3,19 @@ import requests
 import unittest
 
 
-
 class ceshi(unittest.TestCase):
     base_url='https://qiubo-dev.dongpinbang.com:61501/v1'
-    token='tlS2CIbETiOoA8W30mownivWqr4teNlxo2b444AZ7WTzzSVz1UH6aue' \
-          'leWoB-d8Cj13Pqvbb37Vmjnhmmcn_b0TxjOlIt2WLcG-jbyG_fVSPOb1R4BH7byrs9HnepP8w'
+    token='S73jLFPX5gYG0WY9WIglqehqEsd-w9XVIG0hPcdvOHyibm-gqDB1' \
+          'BeNqaCv1td4-tVcIyrqw6JNE54lEbljOvrMLec2qnJG1N6CcQHsgwQ24iCLg6AQ63uFPvN4U4vvN'
 
     def test_get_focus_list(self):#获取首页焦点图列表
 
         url = self.base_url+'/home-config/get-focus-list'
         search = {'token': self.token}
-        response=requests.request('GET',url=url,params=search).json()
+        response1=requests.request('GET',url=url,params=search)
+        response=response1.json()
         try:
-            self.assertEqual(response['message'], 'ok')
+            self.assertEqual(response1.status_code, 200)
             print ('test_get_focus_list pass')
         except Exception as e:
             print (e)
@@ -40,7 +40,8 @@ class ceshi(unittest.TestCase):
         try:
             self.assertEqual(response['message'], 'ok')
             print ('test_get_icon_list pass')
-        except:
+        except Exception as e:
+            print e
             print ('test_get_icon_list faild')
 
     def test_get_tip_list(self):  # 获取首页i滚动播放tip
